@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
         ref={imageRef}
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/161417/cave-stones-evolution-161417.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+          backgroundImage: 'url(https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&cs=tinysrgb&w=1600)',
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -57,9 +57,9 @@ const Hero: React.FC = () => {
         ref={textRef}
         className="container-custom relative z-10 text-white text-center"
       >
-        <h1 className="font-serif font-bold mb-6">The Journey of Human Evolution</h1>
+        <h1 className="font-serif font-bold mb-6">Unveiling the Story of Human Evolution</h1>
         <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 text-stone-100">
-          Explore the fascinating story of how modern humans evolved through millions of years of adaptation and change.
+          Discover the key milestones and adaptations that shaped the human species over millions of years.
         </p>
         <a 
           href="#timeline" 
