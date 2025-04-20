@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-stone-50 text-stone-800;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .timeline-progress {
+    @apply h-0.5 bg-amber-500 absolute top-0 left-0 origin-left;
+    transition: transform 0.1s ease-out;
+  }
+  
+  .timeline-item {
+    @apply opacity-40 transition-opacity duration-500;
+  }
+  
+  .timeline-item.active {
+    @apply opacity-100;
+  }
+  
+  .tooltip {
+    @apply absolute bg-white bg-opacity-95 shadow-lg rounded-lg p-4 text-sm z-50 max-w-xs invisible opacity-0 transition-all duration-300 pointer-events-none;
+    transform: translateY(10px);
+  }
+  
+  .tooltip.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .species-card {
+    @apply rounded-lg overflow-hidden bg-white shadow-md transition-all duration-500 hover:shadow-xl;
+  }
+  
+  .parallax-container {
+    @apply overflow-hidden relative;
+  }
+  
+  .parallax-element {
+    @apply will-change-transform;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-stone-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-stone-400 rounded-full hover:bg-stone-500;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Timeline specific styles */
+.horizontal-timeline {
+  @apply flex items-center overflow-x-auto py-8 mt-8 mb-16;
+  scroll-snap-type: x mandatory;
+}
+
+.timeline-connector {
+  @apply h-0.5 bg-stone-300 flex-grow relative;
+}
